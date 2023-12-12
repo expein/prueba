@@ -13,8 +13,8 @@
 </head>
 
 <body onload="comprobation()" class="items-center" style="background-image: url('https://www.wallpaperflare.com/static/921/630/384/airplane-airport-chair-passenger-aircraft-wallpaper.jpg');">
-    <div class="w-full">
-        <div class="columns-auto text-center bg-blue-700 p-5">
+    <div class="w-full bg-blue-700">
+        <div class="columns-auto text-center p-5">
             <h1 class="text-white roboto-mono text-5xl font-bold">Busca tu vuelo</h1>
         </div>
     </div>

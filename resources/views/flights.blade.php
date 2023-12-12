@@ -11,9 +11,12 @@
 </head>
 
 <body class=" roboto-mono">
-    <div class="w-full">
-        <div class="columns-auto text-center bg-blue-700 p-5">
-            <h1 class="text-white text-5xl font-bold">Vuelos disponibles</h1>
+    <div class="w-full bg-blue-700 flex justify-around text-white">
+        <div class="w-1/2 text-center p-5">
+            <h1 class="font-bold text-5xl">Vuelos disponibles</h1>
+        </div>
+        <div class="w-1/2 text-center p-5">
+            <a href="{{ url('/') }}"><i class="fa-solid fa-house text-4xl"></i></a>
         </div>
     </div>
     @if(count($allFlightDetails) > 0)
