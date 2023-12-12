@@ -19,7 +19,7 @@
         </div>
     </div>
     <div class="container w-1/2 text-center roboto-mono bg-white rounded-lg mx-auto p-5 mt-10 drop-shadow-lg">
-        <form action="{{ url('/getFlights') }}" method="post" id="flightForm" onchange="comprobation()" onsubmit="showLoadingMessage()">
+        <form action="{{ url('/get-flights') }}" method="post" id="flightForm" onchange="comprobation()" onsubmit="showLoadingMessage()">
             @csrf
             <div class="flex justify-around mt-20">
                 <div class="w-1/2 mr-5">

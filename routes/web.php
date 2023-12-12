@@ -1,16 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Controller;
 use App\Http\Controllers\Api;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get("/",  [Api::class, "searchFlights"])->name('searchFlights');
 
-Route::get("/searchFlights",  [Controller::class, "searchFlights"]);
-
-Route::post("/getFlights", [Api::class, "getFlights"])->name('getFlights');
+Route::post("/get-flights", [Api::class, "getFlights"])->name('getFlights');
 
 Route::view('/flights', 'flights')->name('flights');
 

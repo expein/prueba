@@ -6,8 +6,13 @@ use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 use Carbon\Carbon;
 
-class Api extends Controller
+class Api
 {
+
+    public function searchFlights()
+    {
+        return View("searchFlights");
+    }
 
     public function getFlights(Request $request){
 
@@ -42,7 +47,7 @@ class Api extends Controller
 
         try{
             
-            $response = $client->post("https://travelflight.pdtcomunicaciones.com/api/flights", [
+            $response = $client->post($_ENV["URL_API"]."/flights", [
                 'json' => $data,
                 'headers' => [
                     'Content-Type' => 'application/json'
@@ -67,7 +72,6 @@ class Api extends Controller
                                     'arrivalCity' => $flight['location'][1]['locationId'],
                                     'marketingCarrier' => $flight['companyId']['marketingCarrier'],
                                     'flightOrtrainNumber' => $flight['flightOrtrainNumber'],
-                                    // Agregar más propiedades según sea necesario
                                 ];
 
                                 $allFlightDetails[] = $flightDetails;
@@ -104,7 +108,7 @@ class Api extends Controller
 
         try {
 
-            $response = $client->post("https://travelflight.pdtcomunicaciones.com/api/airports", [
+            $response = $client->post($url = $_ENV["URL_API"]."/airports", [
                 'json' => $data,
                 'headers' => [
                     'Content-Type' => 'application/json'
@@ -143,7 +147,7 @@ class Api extends Controller
 
         try {
 
-            $response = $client->post("https://travelflight.pdtcomunicaciones.com/api/airports", [
+            $response = $client->post($_ENV["URL_API"]."/airports", [
                 'json' => $data,
                 'headers' => [
                     'Content-Type' => 'application/json'
