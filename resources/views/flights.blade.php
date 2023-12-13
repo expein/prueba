@@ -11,19 +11,19 @@
 </head>
 
 <body class=" roboto-mono">
-    <div class="w-full bg-blue-700 flex justify-around text-white">
-        <div class="w-1/2 text-center p-5">
-            <h1 class="font-bold text-5xl">Vuelos disponibles</h1>
-        </div>
-        <div class="w-1/2 text-center p-5">
-            <a href="{{ url('/') }}"><i class="fa-solid fa-house text-4xl"></i></a>
+    <div class="w-full bg-blue-700 flex text-white">
+        <div class="w-full text-start p-5">
+            <a href="{{ url('/') }}" class="text-white roboto-mono text-4xl font-bold">Travels</i></a>
         </div>
     </div>
     @if(count($allFlightDetails) > 0)
     <div class="w-full text-white">
+        <div class="w-full text-center p-5">
+            <h1 class="font-bold text-5xl text-gray-700">Vuelos disponibles</h1>
+        </div>
         @foreach($allFlightDetails as $flightDetails)
-        <div class="flex justify-between border border-gray-400 bg-white m-10 rounded-lg drop-shadow-lg">
-            <div class="bg-blue-700 w-1/4 p-20 text-center text-white rounded-lg drop-shadow-lg">
+        <div class="flex border border-gray-400 bg-white m-10 rounded-lg drop-shadow-lg hover:bg-gray-200">
+            <div class="bg-blue-700 w-1/4 p-20 text-center justify-center text-white rounded-l-lg drop-shadow-lg">
                 <div>
                     <i class="fa-solid fa-plane-departure text-5xl"></i>
                 </div>

@@ -108,7 +108,7 @@ class Api
 
         try {
 
-            $response = $client->post($url = $_ENV["URL_API"]."/airports", [
+            $response = $client->post($_ENV["URL_API"]."/airports", [
                 'json' => $data,
                 'headers' => [
                     'Content-Type' => 'application/json'

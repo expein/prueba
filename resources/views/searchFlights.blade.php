@@ -12,13 +12,16 @@
     @vite('resources/css/app.css')
 </head>
 
-<body onload="comprobation()" class="items-center" style="background-image: url('https://www.wallpaperflare.com/static/921/630/384/airplane-airport-chair-passenger-aircraft-wallpaper.jpg');">
-    <div class="w-full bg-blue-700">
+<body onload="comprobation()" class="items-center">
+    <div class="w-full bg-blue-700 flex">
         <div class="columns-auto text-center p-5">
-            <h1 class="text-white roboto-mono text-5xl font-bold">Busca tu vuelo</h1>
+            <a href="{{ url('/') }}" class="text-white roboto-mono text-4xl font-bold">Travels</a>
         </div>
     </div>
-    <div class="container w-1/2 text-center roboto-mono bg-white rounded-lg mx-auto p-5 mt-10 drop-shadow-lg">
+    <div class="container w-1/2 text-center roboto-mono bg-white rounded-lg mx-auto p-20 mt-10 shadow-xl">
+        <div class="columns-auto text-center p-5">
+            <h1 class="text-gray-700 roboto-mono text-5xl font-bold">Busca tu vuelo</h1>
+        </div>
         <form action="{{ url('/get-flights') }}" method="post" id="flightForm" onchange="comprobation()" onsubmit="showLoadingMessage()">
             @csrf
             <div class="flex justify-around mt-20">
@@ -37,7 +40,7 @@
                     <input type="date" name="hour" id="hour" class="border border-black p-2 rounded-full text-center w-1/2">
                 </div>
             </div>
-            <div class="row justify-content-around mt-20">
+            <div class="row justify-content-around pt-10">
                 <div class="w-full">
                     <button type="submit" id="btnSearch" class="drop-shadow-lg bg-blue-700 hover:bg-blue-900 text-white py-2 px-4 rounded-full w-1/4 cursor-pointer">
                         <span><i class="fa-solid fa-magnifying-glass"></i></span> Buscar
